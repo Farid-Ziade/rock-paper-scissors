@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Pixelify Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  background: linear-gradient(
+    to right,
+    rgba(34, 193, 195, 1) 0%,
+    rgba(253, 187, 45, 1) 100%
+  );
+  background-attachment: fixed;
+}
+.container {
+  max-width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 5%;
+}
+.card-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 5%;
+}
+.card {
+  width: 15em;
+  background-color: whitesmoke;
+  transform: translateY(0);
+  transition: transform 0.5s linear;
+}
+.card:hover {
+  transform: translateY(-10%);
+}
+.card img {
+  height: 15em;
+}
+.score {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 50px;
+  font-size: 2em;
+}
