@@ -2,9 +2,9 @@ let cards = document.querySelectorAll(".card");
 let humanChoice = "";
 let playerScore = 0;
 let computerScore = 0;
-let p = document.querySelector(".player-score");
-let c = document.querySelector(".computer-score");
-console.log(p);
+let player = document.querySelector(".player-score");
+let computer = document.querySelector(".computer-score");
+let result = document.querySelector(".ui");
 let choice = ["rock", "paper", "scissors"];
 cards.forEach((card, index) => {
   card.addEventListener("click", () => {
@@ -19,39 +19,42 @@ cards.forEach((card, index) => {
     }
     if (humanChoice === "rock" && computerChoice === "scissors") {
       playerScore++;
-      p.innerText = playerScore;
+      player.innerText = playerScore;
+      result.innerText = `${humanChoice} beats ${computerChoice}`;
     }
     if (humanChoice === "paper" && computerChoice === "rock") {
       playerScore++;
-      p.innerText = playerScore;
+      player.innerText = playerScore;
+      result.innerText = `${humanChoice} beats ${computerChoice}`;
     }
     if (humanChoice === "scissors" && computerChoice === "paper") {
       playerScore++;
-      p.innerText = playerScore;
+      player.innerText = playerScore;
+      result.innerText = `${humanChoice} beats ${computerChoice}`;
     }
     if (humanChoice === "rock" && computerChoice === "rock") {
-      console.log("draw");
+      result.innerText = `It's a draw!`;
     }
     if (humanChoice === "paper" && computerChoice === "paper") {
-      console.log("draw");
+      result.innerText = `It's a draw!`;
     }
     if (humanChoice === "scissors" && computerChoice === "scissors") {
-      console.log("draw");
+      result.innerText = `It's a draw!`;
     }
     if (computerChoice === "rock" && humanChoice === "scissors") {
       computerScore++;
-      c.innerText = computerScore;
+      computer.innerText = computerScore;
+      result.innerText = `${humanChoice} loses to ${computerChoice}`;
     }
     if (computerChoice === "paper" && humanChoice === "rock") {
       computerScore++;
-      c.innerText = computerScore;
+      computer.innerText = computerScore;
+      result.innerText = `${humanChoice} loses to ${computerChoice}`;
     }
     if (computerChoice === "scissors" && humanChoice === "paper") {
       computerScore++;
-      c.innerText = computerScore;
+      computer.innerText = computerScore;
+      result.innerText = `${humanChoice} loses to ${computerChoice}`;
     }
-    console.log("computer choice", computerChoice);
-    console.log("humanChoice", humanChoice);
-    console.log("p", playerScore, "c", computerScore);
   });
 });
